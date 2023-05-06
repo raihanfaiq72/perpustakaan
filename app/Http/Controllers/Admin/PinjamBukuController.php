@@ -146,6 +146,7 @@ class PinjamBukuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->mPinjam->where('id', $id)->delete();
+        return redirect("$this->url")->with('sukses', 'Data Admin berhasil dihapus');
     }
 }

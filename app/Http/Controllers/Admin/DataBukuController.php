@@ -155,6 +155,7 @@ class DataBukuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->mBuku->where('id', $id)->delete();
+        return redirect("$this->url")->with('sukses', 'Data Admin berhasil dihapus');
     }
 }
